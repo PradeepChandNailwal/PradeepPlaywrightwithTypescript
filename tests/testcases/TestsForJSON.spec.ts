@@ -11,7 +11,7 @@ test("Search JSON", async ({  }) => {
     console.log("Found : " + foundIndex);
 });
 
-test("Read JSON", async ({  }) => {
+test.only("Read JSON", async ({  }) => {
     console.log('Reading JSON Test Data');
     readTestData(file);
 });
@@ -19,7 +19,7 @@ test("Write JSON", async ({  }) => {
     console.log('Updating JSON Test Data');
     addTestData(file, "Lord", "Shiva");
 });
-test.only("Update JSON", async ({  }) => {
+test("Update JSON", async ({  }) => {
     console.log('Updating JSON Test Data');
     updateTestData(file, 3,"Jai", "Ganesh");
 });

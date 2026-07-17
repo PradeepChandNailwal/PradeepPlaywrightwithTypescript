@@ -3,25 +3,25 @@ import { addTestData, deleteTestData, findTestData, readTestData, updateTestData
 
 const file = '../testData/Ali.json';
 
-test("Search JSON", async ({  }) => {
+test("Search JSON", async ({ }) => {
     console.log('Searching JSON Test Data');
     let foundIndex = findTestData(file, "user2", "password2");
     console.log("Found : " + foundIndex);
 });
 
-test.only("Read JSON", async ({  }) => {
+test("Read JSON", async ({ }) => {
     console.log('Reading JSON Test Data');
     readTestData(file);
 });
-test("Write JSON", async ({  }) => {
+test("Write JSON", async ({ }) => {
     console.log('Updating JSON Test Data');
     addTestData(file, "Lord", "Shiva");
 });
-test("Update JSON", async ({  }) => {
+test("Update JSON", async ({ }) => {
     console.log('Updating JSON Test Data');
-    updateTestData(file, 3,"Jai", "Ganesh");
+    updateTestData(file, 3, "Jai", "Ganesh");
 });
-test("Delete JSON", async ({  }) => {
+test("Delete JSON", async ({ }) => {
     console.log('Deleting JSON Test Data');
     deleteTestData(file, "Lord");
 });

@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.only('has title', async ({ page }) => {
+  await page.waitForTimeout(5000);
   await page.goto('https://playwright.dev/');
 
   // Expect a title "to contain" a substring.
@@ -12,7 +13,7 @@ test('get started link', async ({ page }) => {
 
   // Click the get started link.
   await page.getByRole('link', { name: 'Get started' }).click();
-
+await page.waitForTimeout(5000);
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });

@@ -45,5 +45,20 @@ export function addTestData(file: string, name: string, pass: string) {
     console.log(name + "---" + pass);
 }
 
+export function deleteTestData(file: string, name: string) {
+  const filePath = new URL(file, import.meta.url);
+  const readData = readFileSync(filePath, 'utf8');
+  const testData = JSON.parse(readData);
+
+  // Filter out the entry with the given username
+  const updatedData = testData.filter((item: { username: string }) => item.username !== name);
+
+  const stringifydData = JSON.stringify(updatedData, null, 2);
+  writeFileSync(filePath, stringifydData, 'utf8');
+
+  console.log(`Deleted user: ${name}`);
+}
+
+
 
 

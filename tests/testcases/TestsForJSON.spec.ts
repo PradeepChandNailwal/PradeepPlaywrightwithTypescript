@@ -1,7 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { readFileSync } from 'fs';
-import { writeFileSync } from 'fs';
-import { addTestData, findTestData, readTestData, updateTestData } from '../utils/CommonLibrary';
+import { addTestData, deleteTestData, findTestData, readTestData, updateTestData } from '../utils/CommonLibrary';
 
 const file = '../testData/Ali.json';
 
@@ -23,6 +21,9 @@ test("Update JSON", async ({  }) => {
     console.log('Updating JSON Test Data');
     updateTestData(file, 3,"Jai", "Ganesh");
 });
-
+test("Delete JSON", async ({  }) => {
+    console.log('Deleting JSON Test Data');
+    deleteTestData(file, "Lord");
+});
 
 

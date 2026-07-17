@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.only('has title', async ({ page }) => {
+test('has title', async ({ page }) => {
   await page.waitForTimeout(5000);
   await page.goto('https://playwright.dev/');
 
